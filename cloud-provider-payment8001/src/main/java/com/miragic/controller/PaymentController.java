@@ -4,7 +4,6 @@ import com.miragic.entities.CommonResult;
 import com.miragic.entities.Payment;
 import com.miragic.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
