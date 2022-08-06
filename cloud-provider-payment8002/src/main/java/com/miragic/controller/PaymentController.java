@@ -13,11 +13,11 @@ import javax.annotation.Resource;
 @Slf4j
 public class PaymentController {
 
-    @Value("${server.port}")
-    private String serverPort;//添加serverPort
-
     @Resource
     private PaymentService paymentService;
+
+    @Value("${server.port}")
+    private String serverPort;//添加serverPort
 
     @PostMapping("/payment/create")
     public CommonResult create(@RequestBody Payment payment) {
@@ -25,7 +25,7 @@ public class PaymentController {
         if (result > 0) {
             return new CommonResult<>(200, "插入数据库成功，serverPort：" + serverPort, null);
         } else {
-            return new CommonResult<>(500, "插入数据库失败！", null);
+            return new CommonResult<>(500, "插入数据库失败，serverPort：" + serverPort, null);
         }
     }
 
@@ -34,7 +34,7 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         log.info("********123");
         if (payment != null) {
-            return new CommonResult(200, "查询成功！", payment);
+            return new CommonResult(200, "查询成功， serverPort：" + serverPort, payment);
         } else {
             return new CommonResult(444, "没有对应记录,查询ID: " + id, null);
         }
