@@ -16,6 +16,9 @@
         select * from payment where id=#{id};
     </select>
 
+    <select id="getTest" parameterType="Long" resultType="map">
+        select * from payment where id=#{id};
+    </select>
 </mapper>
 
 

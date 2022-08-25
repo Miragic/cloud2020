@@ -2,6 +2,8 @@ package com.miragic.service;
 
 import com.miragic.entities.Payment;
 
+import java.util.Map;
+
 public interface PaymentService {
 
     /**
@@ -17,4 +19,6 @@ public interface PaymentService {
      * @return
      */
     Payment getPaymentById(Long id);
+
+    Map<String, Object> getTest(Long id);
 }
